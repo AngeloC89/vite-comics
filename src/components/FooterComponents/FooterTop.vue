@@ -1,5 +1,5 @@
 <template>
-    <div class="footertop p-4">
+    <div class="footertop p-5">
     <div class="container ">
         <ul class="d-flex justify-content-between align-items-center list-unstyled">
             <li class=""  v-for="(item, index) in MenuFooter" :key="index">
