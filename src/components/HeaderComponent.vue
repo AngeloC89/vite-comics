@@ -1,51 +1,86 @@
 <template>
-    <header>
-        <div id="nav">
-            <h1>ciolla</h1>
-            <ul>
-                <li><a href="#">link</a></li>
-                <li><a href="#">link</a></li>
-                <li><a href="#">link</a></li>
-            </ul>
-        </div>
-    </header>
+  <header>
+    <div id="nav" class="container">
+      <!-- Logo -->
+      <div>
+        <img class="img-fluid" src="/public/img/dc-logo.png" alt="">
+      </div>
+      <!-- navbar -->
+      <div>
+        <ul>
+          <li v-for="(item, index) in menu" :key="index">
+            <a href="#">{{ item }}</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </header>
 </template>
 
 <script>
-    export default {
-        name: 'HeaderComponent',
+  export default {
+    name: 'HeaderComponent',
+    data() {
+      return {
+        menu: [
+          'characters',
+          'comics',
+          'movies',
+          'tv',
+          'games',
+          'collectibles',
+          'videos',
+          'fans',
+          'news',
+          'shop'
+        ]
 
+      }
     }
+  }
+
 </script>
 
 <style lang="scss" scoped>
 
-    header {
-        border: 1px solid red;
-        height: 100px;
-        width: 100%;
-        margin: o auto;
+  @use '../assets/styles/partials/variables' as *;
+
+  header {
+
+    background-color:$backgroundHeader;
+    width: 100%;    
+    display: flex;
+    align-items: center;
+    #nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+
+      ul {
         display: flex;
         align-items: center;
+        margin: auto;
 
-        #nav{
-            border: 1px solid red;
-            width: 80%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        li {
+          list-style: none;
+          margin: 10px;
 
-            ul{
-                display: flex;
+          a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: black;
+            font-weight: bold;
 
-                li{
-                    list-style: none;
-                    text-decoration: none;
-                    
-                    margin: 20px;
-                }
+            &:hover {
+              color: #0282f9;
             }
+
+          }
+
         }
+      }
     }
+  }
 </style>
