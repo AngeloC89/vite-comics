@@ -1,7 +1,7 @@
 <template>
     <div class="footertop p-5">
     <div class="container ">
-        <ul class="d-flex justify-content-between align-items-center list-unstyled">
+        <ul class="d-flex justify-content-around align-items-center list-unstyled">
             <li class=""  v-for="(item, index) in MenuFooter" :key="index">
                 <img :src="item.icon" alt="Image">
                 <a class="text-decoration-none text-white mx-3 text-uppercase " href="#">{{item.text}}</a></li>
