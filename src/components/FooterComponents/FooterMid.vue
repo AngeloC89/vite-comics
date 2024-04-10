@@ -2,7 +2,7 @@
     <div id="footmind">
         <div class="container d-flex ">
             <div id="list">
-                <ul class="list-unstyled  " v-for="(item, index) in menufooter" :key="index">
+                <ul class="list-unstyled pe-3 " v-for="(item, index) in menufooter" :key="index">
                     <li>
                         <h4 class="text-white">{{ item.title }}</h4>
                     </li>
@@ -130,8 +130,8 @@
 
 
         #list {
-            width: 50%;
-            height: 400px;
+            width: 30%;
+            height: 390px;
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
@@ -156,11 +156,11 @@
         }
 
         #dc-comics {
-            width: 50%;
+            width: 70%;
             background-image: url('/img/dc-logo-bg.png');
-            background-position: center;
+            background-position: right;
             background-repeat: no-repeat;
-            background-size: 100%;
+            background-size: 65%;
 
         }
     }
