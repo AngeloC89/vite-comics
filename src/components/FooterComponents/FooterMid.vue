@@ -19,14 +19,20 @@
 
 <style lang="scss" scoped>
 
-div{
+div{height: 500px;
+    background-image: url('/img/footer-bg.jpg');
     border: 1px solid red;
     display: flex;
-    #list{height: 100px;
+    #list{
         width: 50%;
     }
-    #dc-comics{height: 100px;
+    #dc-comics{
         width: 50%;
+        background-image: url('/img/dc-logo-bg.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 70%;
+     
     }
 }
 
