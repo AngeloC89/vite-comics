@@ -1,17 +1,17 @@
 <template>
   <header>
-    <div id="nav" class="container">
+    <div id="header" class="container ">
       <!-- Logo -->
-      <div>
+      <div class="p-3">
         <img class="img-fluid" src="/public/img/dc-logo.png" alt="">
       </div>
       <!-- navbar -->
-      <div>
+      <div id="nav" class="p-3">
         <ul>
           <li v-for="(item, index) in menu" :key="index">
             <a href="#">{{ item }}</a>
           </li>
-        </ul>
+        </ul>      
       </div>
 
     </div>
@@ -48,15 +48,15 @@
 
   header {
 
-    background-color:$backgroundHeader;
-    width: 100%;    
+    background-color: $backgroundHeader;
+    width: 100%;
     display: flex;
     align-items: center;
-    #nav {
+
+    #header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px;
 
       ul {
         display: flex;
@@ -77,8 +77,21 @@
               color: #0282f9;
             }
 
+            &:after {
+              content: '';
+              display: block;
+              height: 5px;
+              width: 100%;
+              margin: 0 auto;             
+              background-color: transparent;
+              position: relative ;
+              top: 53px;
+            }
+            &.active:after,
+            &:hover:after {
+              background-color: #0282f9;
+            }
           }
-
         }
       }
     }
