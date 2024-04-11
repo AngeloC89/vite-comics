@@ -3,10 +3,12 @@
         <div class="container text-center">
             <h2 class="text-white text-uppercase ">current series</h2>
             <div class="row">
-                <div class="col-12 col-md-3 col-lg-2" v-for="(item, index) in comics" :key="index" >
-                    <CardComponent :image="item.thumb" :series="item.series" :price="item.price"/>
+                <div id="card" class="col-12 col-md-3 col-lg-2" v-for="(item, index) in comics" :key="index">
+                    <CardComponent :image="item.thumb" :series="item.series" :price="item.price"
+                        @remove="removeCard(index)" />
                 </div>
             </div>
+            <div class="btn btn-primary text-uppercase w-25 my-5 m-auto ">load more</div>
         </div>
     </main>
 </template>
@@ -25,10 +27,16 @@
 
             }
         },
-        mounted() {
-            console.log(comics);
-        },
+        methods: {
+            removeCard(index) {
+                this.comics.splice(index, 1);
 
+            },
+            mounted() {
+
+            },
+
+        }
     }
 
 
@@ -41,14 +49,26 @@
     main {
         background-color: $backgroundMain;
 
-        h2{
+        h2 {
             background-color: $backgroundFooterTop;
             padding: 10px 0px;
             width: 300px;
             margin-right: auto;
             transform: translateY(-50%);
         }
-        
+
+        #card {
+
+            margin-bottom: 20px;
+            transition: 0.5s;
+
+
+            &:hover {
+                transform: scale(1.1);
+
+                opacity: 0.5;
+            }
+        }
     }
-   
+
 </style>
