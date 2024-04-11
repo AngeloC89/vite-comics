@@ -15,7 +15,7 @@
 #jumpo{
     background-image: url('/img/jumbotron.jpg');
     width: 100%;
-    height: 500px;
+    height: 450px;
 }
 
 </style>
